@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Prototype.Views.GroupHomePage"
+             Title="Home">
+
+    <Grid RowDefinitions="Auto, Auto, *, Auto, Auto"
+          BackgroundColor="{StaticResource PrimaryDark}">
+
+        <!-- Top Bar -->
+        <Grid Grid.Row="0"
+              HeightRequest="70"
+              Padding="15"
+              ColumnDefinitions="Auto, *, Auto, Auto"
+              VerticalOptions="Start">
+
+            <Image Source="dotnet_bot.png" 
+                   WidthRequest="30"
+                   HeightRequest="30"
+                   Grid.Column="0" />
+
+            <Button
+                Text="Members"
+                WidthRequest="80"
+                HeightRequest="30"
+                Grid.Column="2"
+                Clicked="Members_Clicked"
+                BackgroundColor="{StaticResource NormalBtn}" />
+
+            <Button Text="Settings"
+                    WidthRequest="80"
+                    HeightRequest="30"
+                    Grid.Column="3"
+                    BackgroundColor="{StaticResource ImportantBtn}" />
+        </Grid>
+
+        <!-- Timer label -->
+        <Label x:Name="TimerLabel"
+               Grid.Row="1"
+               Text="00:00"
+               FontSize="24"
+               HorizontalOptions="Center"
+               VerticalOptions="Center"
+               TextColor="White" />
+
+        <!-- Map using leaflet -->
+        <WebView x:Name="MapWebView"
+         Grid.Row="2"
+         VerticalOptions="Fill"
+         HorizontalOptions="Fill" />
+
+        <!-- Start Button -->
+        <Button x:Name="StartButton"
+                Grid.Row="3"
+                Text="Start"
+                WidthRequest="100"
+                HeightRequest="40"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                BackgroundColor="{StaticResource ImportantBtn}"
+                Clicked="StartButton_Clicked" />
+
+        <!-- Bottom Navigation -->
+        <Grid Grid.Row="4"
+              HeightRequest="80"
+              ColumnDefinitions="*, *, *"
+              Padding="20">
+
+            <Button Text="Statistics"
+                    Grid.Column="0"
+                    Clicked="Statistics_Clicked"
+                    BackgroundColor="{StaticResource NormalBtn}" />
+
+            <Button Text="Home"
+                    Grid.Column="1"
+                    Clicked="HomeBtn_Clicked"
+                    BackgroundColor="{StaticResource ImportantBtn}" />
+
+            <Button Text="Schedule"
+                    Grid.Column="2"
+                    Clicked="Schedule_Clicked"
+                    BackgroundColor="{StaticResource NormalBtn}" />
+        </Grid>
+
+    </Grid>
+</ContentPage>

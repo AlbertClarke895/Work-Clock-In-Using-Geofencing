@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Prototype.Views.GroupMembers"
+             Title="Group">
+
+    <Grid RowDefinitions="Auto, *, Auto"
+          BackgroundColor="{StaticResource PrimaryDark}">
+
+        <!-- Top bar -->
+        <Grid Grid.Row="0"
+              HeightRequest="70"
+              Padding="15"
+              ColumnDefinitions="Auto, *, Auto, Auto, Auto"
+              VerticalOptions="Start">
+
+            <!-- Profile i-con -->
+            <Image Source="dotnet_bot.png" 
+                   WidthRequest="30"
+                   HeightRequest="30"
+                   Grid.Column="0" />
+
+            <!-- Roles button -->
+            <Button
+                Text="Roles"
+                WidthRequest="80"
+                HeightRequest="30"
+                Grid.Column="2"
+                Clicked="Roles_Clicked"
+                BackgroundColor="{StaticResource NormalBtn}" />
+
+            <!-- Settings -->
+            <Button
+                Text="Settings"
+                WidthRequest="80"
+                HeightRequest="30"
+                Grid.Column="4"
+                BackgroundColor="{StaticResource ImportantBtn}" />
+        </Grid>
+
+        <!-- main page stuff -->
+        <ScrollView Grid.Row="1" Padding="20">
+
+            <VerticalStackLayout Spacing="20">
+
+                <!-- Create role button -->
+                <Button
+            Text="Create Role"
+            HorizontalOptions="Fill"
+            HeightRequest="45"
+            BackgroundColor="{StaticResource ImportantBtn}"
+            TextColor="White"
+            CornerRadius="10"
+            Clicked="Roles_Clicked" />
+
+                <!-- Members count -->
+                <Label Text="{Binding MemberCount, StringFormat='Members ({0})'}"
+                FontSize="24"
+                TextColor="White"
+                Margin="0,0,0,10"/> 
+
+
+                <!-- Members list -->
+                <CollectionView x:Name="MembersList"
+                        ItemsSource="{Binding Members}"
+                        SelectionMode="None">
+
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+
+                            <Border
+                        BackgroundColor="{StaticResource Accent}"
+                        StrokeShape="RoundRectangle 10"
+                        Padding="10"
+                        Margin="0,5">
+
+                                <Grid ColumnDefinitions="*, Auto"
+                              VerticalOptions="Center">
+
+                                    <Label Text="{Binding Name}"
+                                   TextColor="White"
+                                   FontSize="18"
+                                   Grid.Column="0"/>
+
+                                    <Button Text="+"
+                                    FontSize="20"
+                                    WidthRequest="40"
+                                    HeightRequest="40"
+                                    BackgroundColor="{StaticResource ImportantBtn}"
+                                    CornerRadius="20"
+                                    Grid.Column="1"
+                                    Clicked="AddRole_Clicked"/>
+                                </Grid>
+
+                            </Border>
+
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+
+                </CollectionView>
+
+            </VerticalStackLayout>
+        </ScrollView>
+
+
+
+        <!-- Bottom navigation -->
+        <Grid Grid.Row="2"
+              HeightRequest="80"
+              ColumnDefinitions="*, *, *"
+              Padding="20">
+
+            <Button
+                Text="Statistics"
+                Grid.Column="0"
+                Clicked="Statistics_Clicked"
+                BackgroundColor="{StaticResource NormalBtn}"/>
+
+            <Button 
+                Text="Home"
+                Grid.Column="1"
+                Clicked="HomeBtn_Clicked"
+                BackgroundColor="{StaticResource NormalBtn}"/>
+
+            <Button 
+                Text="Schedule"
+                Grid.Column="2"
+                Clicked="Schedule_Clicked"
+                BackgroundColor="{StaticResource NormalBtn}"/>
+
+        </Grid>
+
+    </Grid>
+
+</ContentPage>

@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Prototype.Views.MainPage"
+                     BackgroundColor="{StaticResource Accent}" >
+
+
+    <Grid>
+        <Label Text="Join or Create a Group"
+               FontSize="28"
+               FontAttributes="Bold"
+               HorizontalOptions="Center"
+               Padding="0,20,0,10" />
+        
+        <!-- Add button -->
+        <Button
+            x:Name="PlusButton"
+            Text="+"
+            WidthRequest="70"
+            HeightRequest="70"
+            CornerRadius="35"
+            FontSize="36"
+            VerticalOptions="End"
+            HorizontalOptions="Center"
+            Margin="0,0,0,40"
+            Clicked="PlusButton_Clicked"
+        BackgroundColor="{StaticResource NormalBtn}"
+        TextColor="White" />
+
+        <Grid
+            x:Name="PopupOverlay"
+            BackgroundColor="#80000000"
+            IsVisible="False"
+            Opacity="0">
+
+            <!-- Popup menu -->
+            <Border
+                Background="White"
+                StrokeThickness="0"
+                WidthRequest="250"
+                Padding="20"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                StrokeShape="RoundRectangle 20">
+
+                <VerticalStackLayout Spacing="15">
+
+                    <Label Text="Choose an option"
+                           HorizontalOptions="Center"
+                           FontSize="18"
+                           FontAttributes="Bold" />
+
+                    <Button Text="Create"
+                            Clicked="Create_Clicked" 
+                            BackgroundColor="{StaticResource ImportantBtn}" />
+                    
+
+                    <Button Text="Join"
+                            Clicked="Join_Clicked" 
+                          BackgroundColor="{StaticResource ImportantBtn}" />
+
+
+                    <Button Text="Close"
+                            Clicked="ClosePopup_Clicked"
+                            BackgroundColor="{StaticResource NormalBtn}" />
+
+
+                </VerticalStackLayout>
+
+            </Border>
+        </Grid>
+
+    </Grid>
+</ContentPage>

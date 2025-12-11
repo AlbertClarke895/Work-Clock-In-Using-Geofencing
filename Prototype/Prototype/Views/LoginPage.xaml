@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Prototype.Views.LoginPage"
+             Title="LoginPage">
+
+    
+
+
+    <VerticalStackLayout Margin="15" Padding="30, 60, 30, 30" Spacing="25">
+
+        <StackLayout Spacing="2" BackgroundColor="{StaticResource Primary}"  HorizontalOptions="Fill">
+            <Label x:Name="lblText"  Text="Login" Style="{StaticResource Title}" HorizontalOptions="Center" />
+        </StackLayout>
+
+        <StackLayout Spacing="2">
+            <Label Text="Email" />
+            <Entry x:Name="userName" Placeholder="Email" BackgroundColor="{StaticResource InputBackground}"/>
+        </StackLayout>
+
+        <StackLayout Spacing="2">
+            <Label Text="Password" />
+            <Entry x:Name="PasswordEntry" IsPassword="True" Placeholder="Password" BackgroundColor="{StaticResource InputBackground}"/>
+        </StackLayout>
+
+
+
+        <Button x:Name="btnLogin"
+        Text="Log in"
+        BackgroundColor="{StaticResource NormalBtn}"
+        Clicked="LoginButton_Clicked"
+        Style="{StaticResource Textlbl}"        
+        BorderWidth="2"
+        />
+
+        <Button x:Name="RegisterBtn"
+        Text="Register"
+        BackgroundColor="{StaticResource ImportantBtn}"
+        Clicked="RegisterBtn_Clicked"
+        Style="{StaticResource Textlbl}"        
+        BorderWidth="2"
+       />
+
+        <Button x:Name="ForgotPassBtn"
+        Text="Forgot Password"
+        Clicked="ForgotPasswordBtn_Clicked"
+        TextColor="{StaticResource ImportantBtn}"
+        Style="{StaticResource Textlbl}"        
+        BorderColor="{StaticResource Accent}"
+        BackgroundColor="{StaticResource Accent}"/>
+
+
+
+
+    </VerticalStackLayout>
+
+
+
+
+</ContentPage>

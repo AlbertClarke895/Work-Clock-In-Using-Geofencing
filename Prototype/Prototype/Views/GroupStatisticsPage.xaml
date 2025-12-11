@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Prototype.Views.GroupStatisticsPage"
+             Title="Statistics">
+
+    <Grid RowDefinitions="Auto, *, Auto"
+          BackgroundColor="{StaticResource PrimaryDark}">
+
+        <!-- Top bar -->
+        <Grid Grid.Row="0"
+              HeightRequest="70"
+              Padding="15"
+              ColumnDefinitions="Auto, *, Auto, Auto"
+              VerticalOptions="Start">
+
+            <!-- Profile icon -->
+            <Image Source="dotnet_bot.png" 
+                   WidthRequest="30"
+                   HeightRequest="30"
+                   Grid.Column="0" />
+
+            <!-- Settings icon -->
+            <Button Text="Settings" 
+                    WidthRequest="80" 
+                    HeightRequest="30" 
+                    Grid.Column="3" 
+                    BackgroundColor="{StaticResource ImportantBtn}"/>
+        </Grid>
+
+        <!-- Main content -->
+        <Grid Grid.Row="1" Padding="20">
+            <Border BackgroundColor="{StaticResource Accent}" 
+                    Stroke="{StaticResource ImportantBtn}" 
+                    StrokeThickness="2" 
+                    Padding="15">
+                
+                <VerticalStackLayout Spacing="15">
+
+                    <!-- Profile name -->
+                    <Label Text="Steve Bob" FontSize="22" FontAttributes="Bold" TextColor="White"/>
+
+                    <!-- Statistics -->
+                    <VerticalStackLayout Spacing="10">
+                        <HorizontalStackLayout Spacing="10">
+                            <Label Text="Title:" TextColor="White" FontSize="16"/>
+                            <Label Text="Owner" TextColor="White" FontSize="16" FontAttributes="Bold"/>
+                        </HorizontalStackLayout>
+                        <HorizontalStackLayout Spacing="10">
+                            <Label Text="Hours Spent:" TextColor="White" FontSize="16"/>
+                            <Label Text="20" TextColor="White" FontSize="16" FontAttributes="Bold"/>
+                        </HorizontalStackLayout>
+                        <HorizontalStackLayout Spacing="10">
+                            <Label Text="Payrate:" TextColor="White" FontSize="16"/>
+                            <Label Text="$13.50" TextColor="White" FontSize="16" FontAttributes="Bold"/>
+                        </HorizontalStackLayout>
+                    </VerticalStackLayout>
+
+                    <!-- Total pay -->
+                    <HorizontalStackLayout Spacing="10" Padding="10,5,0,0">
+                        <Label Text="Total Pay:" TextColor="White" FontSize="16" FontAttributes="Bold"/>
+                        <Label Text="$270.00" TextColor="White" FontSize="16" FontAttributes="Bold"/>
+                    </HorizontalStackLayout>
+
+                </VerticalStackLayout>
+            </Border>
+        </Grid>
+        
+
+        <!-- Bottom navigation -->
+        <Grid Grid.Row="2"
+              HeightRequest="80"
+              ColumnDefinitions="*, *, *"
+              Padding="20">
+
+            <Button Text="Statistics"
+        Grid.Column="0"
+        Clicked="Statistics_Clicked"
+        BackgroundColor="{StaticResource ImportantBtn}" />
+
+            <Button Text="Home"
+                    Grid.Column="1"
+                    Clicked="HomeBtn_Clicked"
+                    BackgroundColor="{StaticResource NormalBtn}"/>
+
+            <Button Text="Schedule"
+                    Grid.Column="2"
+                    Clicked="Schedule_Clicked"
+                    BackgroundColor="{StaticResource NormalBtn}"/>
+        </Grid>
+
+    </Grid>
+</ContentPage>

@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Prototype.Views.GroupRolesPage"
+             Title="Group Roles">
+
+    <ScrollView>
+        <VerticalStackLayout Spacing="20"
+                             Padding="20">
+
+            <Label Text="Create / Edit Role"
+                   FontSize="28"
+                   HorizontalOptions="Center" />
+
+            <!-- Name -->
+            <Label Text="Name" FontSize="18" />
+            <Entry x:Name="RoleNameEntry"
+                   Placeholder="Enter role name"
+                   BackgroundColor="White"/>
+            
+            <!-- Pay -->
+            <Label Text="Pay" FontSize="18" />
+            <Entry x:Name="PayEntry"
+            Placeholder="Enter pay amount"
+            Keyboard="Numeric" 
+            BackgroundColor="White"/> 
+
+            <Label Text="Permissions" FontSize="18" />
+
+            <!-- Permissions options -->
+            <Grid ColumnDefinitions="*, Auto" Padding="0,5">
+                <Label Text="Announcement" VerticalOptions="Center" />
+                <Switch x:Name="AnnouncementSwitch"
+                        Grid.Column="1" />
+            </Grid>
+
+            <Grid ColumnDefinitions="*, Auto" Padding="0,5">
+                <Label Text="Manage" VerticalOptions="Center" />
+                <Switch x:Name="ManageSwitch"
+                        Grid.Column="1" />
+            </Grid>
+
+            <Grid ColumnDefinitions="*, Auto" Padding="0,5">
+                <Label Text="Create Invites" VerticalOptions="Center" />
+                <Switch x:Name="InvitesSwitch"
+                        Grid.Column="1" />
+            </Grid>
+
+            <Grid ColumnDefinitions="*, Auto" Padding="0,5">
+                <Label Text="Change Roles" VerticalOptions="Center" />
+                <Switch x:Name="RolesSwitch"
+                        Grid.Column="1" />
+            </Grid>
+
+            <Grid ColumnDefinitions="*, Auto" Padding="0,5">
+                <Label Text="View Members" VerticalOptions="Center" />
+                <Switch x:Name="ViewSwitch"
+            Grid.Column="1" />
+            </Grid>
+            
+            <!-- Save Button -->
+            <Button Text="Create Role"
+                    HeightRequest="50"
+                    CornerRadius="10"
+                    BackgroundColor="#8A2BE2"
+                    TextColor="White"
+                     />
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
